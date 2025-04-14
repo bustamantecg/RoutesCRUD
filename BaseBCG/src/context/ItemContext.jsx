@@ -48,7 +48,7 @@ export const ItemProvider = ({ children }) => {
     try {
       const res = await axios.put(`${API_URL}/${id}`, data);
       setItems(items.map((item) => (item.id === id ? res.data : item)));
-      toast.success("Artículo actualizado");
+      // toast.success("Artículo actualizado");
     } catch (error) {
       toast.error("Error al actualizar");
     }

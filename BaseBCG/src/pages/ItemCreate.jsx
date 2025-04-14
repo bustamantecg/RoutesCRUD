@@ -1,6 +1,6 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useItems } from "../context/ItemContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -49,28 +49,57 @@ export default function ItemCreate() {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-8 p-6 shadow-md rounded-xl bg-gradient-to-r from-[#0f172a]  to-[#334155]">
+    <div className="max-w-xl mx-auto mt-8 p-6 shadow-md rounded-xl bg-gradient-to-r from-[#0f172a] to-[#334155] text-white">
       <h2 className="text-2xl font-bold mb-4">Crear nuevo artículo</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
-        <input type="text" name="descripcion" placeholder="Descripción" value={form.descripcion} onChange={handleChange} className="input input-bordered w-full" />
-        <input type="text" name="color" placeholder="Color" value={form.color} onChange={handleChange} className="input input-bordered w-full" />
-        <input type="text" name="talles" placeholder="Talles (ej: S, M, L)" value={form.talles} onChange={handleChange} className="input input-bordered w-full" />
-        <input type="text" name="imagen" placeholder="URL de imagen" value={form.imagen} onChange={handleChange} className="input input-bordered w-full border-primary" />
-        <input type="number" name="precio" placeholder="Precio" value={form.precio} onChange={handleChange} className="input input-bordered w-full" />
-        <input type="number" name="stock" placeholder="Stock" value={form.stock} onChange={handleChange} className="input input-bordered w-full" />
-        
-        <label className="flex items-center gap-2">
+        <div>
+          <label className="label">Descripción</label>
+          <input type="text" name="descripcion" value={form.descripcion} onChange={handleChange} className="input input-bordered w-full" />
+        </div>
+
+        <div>
+          <label className="label">Color</label>
+          <input type="text" name="color" value={form.color} onChange={handleChange} className="input input-bordered w-full" />
+        </div>
+
+        <div>
+          <label className="label">Talles (ej: S, M, L)</label>
+          <input type="text" name="talles" value={form.talles} onChange={handleChange} className="input input-bordered w-full" />
+        </div>
+
+        <div>
+          <label className="label">URL de imagen</label>
+          <input type="text" name="imagen" value={form.imagen} onChange={handleChange} className="input input-bordered w-full" />
+        </div>
+
+        <div>
+          <label className="label">Precio</label>
+          <input type="number" name="precio" value={form.precio} onChange={handleChange} className="input input-bordered w-full" />
+        </div>
+
+        <div>
+          <label className="label">Stock</label>
+          <input type="number" name="stock" value={form.stock} onChange={handleChange} className="input input-bordered w-full" />
+        </div>
+
+        <div className="flex items-center gap-2">
           <input type="checkbox" name="oferta" checked={form.oferta} onChange={handleChange} className="checkbox" />
-          En oferta
-        </label>
+          <label>En oferta</label>
+        </div>
 
-        <label className="flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <input type="checkbox" name="publicar" checked={form.publicar} onChange={handleChange} className="checkbox" />
-          Publicar en catálogo
-        </label>
+          <label>Publicar en catálogo</label>
+        </div>
 
-        <button type="submit" className="btn btn-primary w-full">Guardar</button>
+        <div className="flex gap-4 mt-6">
+          <button type="submit" className="btn btn-primary w-full">Guardar</button>
+
+        </div>
       </form>
+      <div className="mt-4">
+        <Link to="/items" className="btn btn-outline w-full">Cancelar</Link>
+      </div>
     </div>
   );
 }

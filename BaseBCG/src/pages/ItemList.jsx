@@ -14,7 +14,7 @@ const ItemList = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-center mb-6 bg-gradient-to-bl from-[#0f172a] via-[#1e1a78] to-[#0f172a]">
         <h1 className="text-3xl font-bold">Listado de Artículos</h1>
         <Link to="/items/create">
           <button className="btn btn-sm btn-outline btn-primary"><i class="bi bi-cloud-plus-fill"></i> Nuevo Artículo</button>

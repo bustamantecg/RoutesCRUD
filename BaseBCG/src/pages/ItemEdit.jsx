@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate , Link} from "react-router-dom";
 import { useItems } from "../context/ItemContext";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
@@ -92,11 +92,12 @@ export default function ItemEdit() {
     });
 
     if (confirmed.isConfirmed) {
-      const actualizado = await updateItem(id, formData);
-      if (actualizado) {
+      try {
+        const actualizado = await updateItem(id, formData);
         toast.success("Artículo actualizado correctamente");
         navigate("/items");
-      } else {
+      } catch (error) {
+        console.error("Error al actualizar el artículo:", error);
         toast.error("Error al actualizar el artículo");
       }
     }
@@ -158,6 +159,9 @@ export default function ItemEdit() {
 
         <button type="submit" className="btn btn-primary w-full">Guardar Cambios</button>
       </form>
+              <Link to="/items" className="btn btn-outline btn-secondary">
+                Volver
+              </Link>
     </div>
   );
 }
