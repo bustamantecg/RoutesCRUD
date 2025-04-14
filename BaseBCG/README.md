@@ -25,6 +25,6 @@ RoutesCRUD/
 ├── tailwind.config.js
 └ ── README.md
 
-🌐 Demo
-https://rutasbustamante.netlify.app/items
+🌐 Demo de aplicación
 
+https://rutasbustamante.netlify.app/
