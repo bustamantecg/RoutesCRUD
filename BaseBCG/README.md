@@ -1,12 +1,30 @@
-# React + Vite
+Aplicación web desarrollada con **React + Vite** que implementa un CRUD (Crear, Leer, Actualizar, Eliminar) de artículos. Utiliza **Context API** para la gestión del estado global, **React Router** para navegación con rutas, y librerías modernas como **Tailwind CSS**, **DaisyUI**, **React Toastify** y **SweetAlert2** para mejorar la experiencia del usuario.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Tecnologías utilizadas
 
-Currently, two official plugins are available:
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [DaisyUI](https://daisyui.com/)
+- [React Router DOM](https://reactrouter.com/)
+- [Axios](https://axios-http.com/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/)
+- [SweetAlert2](https://sweetalert2.github.io/)
+- Context API
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Estructura del proyecto
+RoutesCRUD/
+├── public/
+├── src/
+│   ├── components/
+│   ├── context/
+│   ├── pages/
+│   ├── AppRouter.jsx
+│   └── main.jsx
+├── package.json
+├── tailwind.config.js
+└ ── README.md
 
-## Expanding the ESLint configuration
+🌐 Demo
+https://rutasbustamante.netlify.app/items
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
