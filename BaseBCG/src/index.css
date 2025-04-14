@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, default, retro, cyberpunk, valentine, aqua;
+}
+
+@import "bootstrap-icons/font/bootstrap-icons.css";
